@@ -1,0 +1,607 @@
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(255, 245, 226);
+    /*var(--background-page)*/
+}
+
+header {
+    position: fixed;
+    min-height: 15px;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(254, 237, 217, 0.598);
+    
+    z-index: 5;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.main-menu-desktop ul {
+    display: flex;
+    list-style: none;
+    gap: 1.9rem;
+    padding: 1.9rem;
+    margin-right:100px;
+ }
+  
+ .main-menu-desktop ul li a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s ease-in-out;
+    font-family: 'Quicksand';
+    src: url('./Quicksand/-VariableFont_wght.ttf');
+    font-size: 14pt;
+    display: block;
+    position:relative;
+ }
+  
+ .main-menu-desktop ul li a:hover {
+   
+    transform: scale(1);
+    opacity: .2;
+    filter: blur(1px);
+ }
+  
+ .main-menu-desktop ul li a:hover {
+ transform: scale(1.5);
+ opacity: 1;
+ filter:blur(1px);
+ }
+  
+  
+ .main-menu-desktop {
+    display: none;
+  
+ }
+ 
+
+/**/
+@media screen and (min-width: 768px) {
+    .main-menu-desktop {
+        display: block;
+    }
+}
+
+.close-mobile-menu {
+    cursor: pointer;
+}
+
+.burger-icon {
+    padding: 0.8rem;
+    cursor: pointer;
+    z-index: 2000;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0.4rem;
+}
+
+.burger {
+    background-image: url('../assets/burger.svg');
+    background-repeat: no-repeat;
+}
+
+.closemobilemenu {
+    background-image: url('../assets/closemenu.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 768px)  {
+    .burger-icon {
+        display: none;
+    }
+}
+
+.logo {
+    padding: 1rem;
+    color: #fff;
+    margin-left: 27vh;
+}
+
+.logo img{
+width: 35%;
+height: auto;
+}
+
+.mobile-nav {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align:center;
+    padding: 2rem;
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+    z-index: 10;
+}
+
+.mobile-nav-hide {
+    display: none;
+}
+
+.mobile-nav ul {
+    list-style: none;
+}
+
+/*breakpoint til mobil*/
+.mobile-nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 3rem;
+    
+    
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(100vw);
+    }
+
+    to {
+        transform: translate(0px);
+    }
+}
+
+.title {
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.container {
+    max-width: 85vw;
+    height: 110vh;
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+  
+    padding-top: 140vh;
+    
+   
+background-image:url('../assets/toppfelt.png');
+background-repeat: no-repeat;
+background-size: 85vw; 
+background-position:  bottom;
+
+
+position: relative;
+}
+
+
+
+p.presentasjon {
+    color: black;
+    padding: 5px;
+    
+    position: absolute;
+    top: 220px;
+    left: 130px;
+    font-size: 50px;
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+}
+
+
+span.fag   {
+    color: #000;
+    padding: 5px;
+    
+    position: absolute;
+    top: 300px;
+    left: 130px;
+    font-size: 24px;
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    color:rgba(39, 31, 31, 0.5)
+}
+
+
+footer {
+    min-height: 40px;
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+.box{
+
+display: block;
+margin-top: 9vw;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 30vh;
+max-width:85vw;
+
+}
+/* Works section */
+
+.workslist {
+    max-width: 960px;
+    width: 110%;
+    margin-top: 50px;
+    margin: 3rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+    
+    
+}
+
+.work {
+    display: block;
+    width: 290px;
+    height: 290px;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+}
+
+.work:hover .work-mask {
+   transform: translate(0px); 
+}
+
+/*Filter på prosjektbildene*/
+.work-mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transform: translate(-300px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.work:hover .work-title {
+    transform: translateY(160px);
+}
+/*Prosjekttittel*/
+.work-title {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    z-index: 10;
+    transform: translateY(220px);
+    transition: transform 0.3s ease-in-out;
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    
+}
+
+.work-cover {
+    width: 100%;
+    height: 100%;
+}
+
+/*Malen til prosjektsidene*/
+.project {
+    padding-top: 4rem;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+
+.project-image {
+    width: 100%;
+    padding-top: 20px;
+    
+}
+
+.project p {
+    margin: 1rem 0;
+    display: flex;
+  padding-left: 50px;
+    min-width: 450px;
+    max-width: 450px;
+    font-family: 'Quicksand';
+src: url('./Quicksand/-VariableFont_wght.ttf');
+}
+
+.basic-image {
+    width: 100%;
+    margin-top:60px;
+ 
+}
+
+
+h1.title {
+    position:left;
+	font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    font-size: 30pt;
+}
+
+/*h1 prosjektsidene*/
+.project h1 {
+    color: black;
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    font-size: 30pt;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    font-weight: 100;
+}
+
+/*brødtekst på prosjektsidene*/
+.project-body {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+}
+
+.bildeserie {
+    border: 0px;
+    padding: 10px;
+    height: 470px;
+    display: flex;
+    width: 80%;
+    margin-top: 18px;
+    margin-left: 140px;
+    background-color:none;
+}
+
+/*ABOUT*/
+
+
+
+
+.about-section {  
+    width: auto;  
+     height: 50vh;
+    padding: 15px;  
+    
+ 
+    
+    display: block;
+    }  
+
+    .about-section img {  
+    height: auto;  
+  
+    display: block;
+    margin-top: 12vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    width: 40%;
+    }  
+
+    
+
+    .about-section h1 {  
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 100px;
+    
+    }  
+    .about-section p {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+/* "Konseptet" – brødtekst */
+* {
+	box-sizing: border-box;
+}
+
+/* Set additional styling options for the columns*/
+.column {
+float: left;
+width: 43%;
+padding-top: 0px;
+padding-right: 50px;
+padding-bottom: 0px;
+padding-left: 0px;
+position: relative;
+font-family: 'Quicksand';
+src: url('./Quicksand/-VariableFont_wght.ttf');
+font-size: 12pt;
+line-height: 1.2;
+color: black;
+
+
+}
+
+.row {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 60px;
+margin-top: 90px;
+width: 70%;
+
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+span.kolonne1 {
+    font-family: 'Quicksand';
+    src: url('./Quicksand/-VariableFont_wght.ttf');
+font-size: 12pt;	
+}
+
+.bilde:after{
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+h2.undertittel {
+	font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    font-size: 25pt;
+    margin-left: auto;
+    margin-bottom: 40px;
+    color: black;	
+    }
+
+
+    /*Seksjon om utdanning*/
+   .imagerow
+   {
+    display: grid;
+    padding: 2rem;
+    gap: 7rem;
+    grid-template-columns: 300px 1fr;
+    
+    align-items: left;
+        /*align-items: center;*/
+    
+    margin: 0 auto;
+    font: 500 100%/1.5 system-ui;
+    margin-top:15vh;
+    margin-left: 100px;
+    
+    margin-bottom:150px;
+    width: 70%;
+
+
+    
+  }
+  .imagerow img {
+    width: 50vh;
+    height: auto;
+  }
+
+.imagerow h3
+{
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    
+  }
+
+  /*
+  h3.mindreoverskrift{
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    background-color: pink;
+  }*/
+
+p.informerende-tekst {
+    font-family: 'Quicksand';
+    src: url('./Quicksand/-VariableFont_wght.ttf');
+font-size: 12pt;
+
+}
+
+span.liten-overskrift{
+    font-family: 'DMSerifText-Regular';
+	src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+    font-size: 23pt;
+    
+}
+
+/*
+ CONTACT-PAGE*/
+
+ /*Flex-box:*/
+ .kontakt-seksjon {
+    padding-top: 28vh;
+    
+    width: 100%;
+
+    
+}
+
+/*Overskrift*/
+.kontakt-tittel {
+font-family: 'DMSerifText-Regular';
+src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+font-size: 33pt;
+padding-left: 170px;
+padding-bottom: 30px;
+
+}
+/*Underoverskrift*/
+.kontakt-beskrivelse {
+    font-family: 'Quicksand';
+    src: url('./Quicksand/-VariableFont_wght.ttf');
+
+    font-weight: 100;
+    font-size: 15pt;
+    padding-left: 170px;
+    }
+
+
+.holdingcontainer {
+    width:100%;
+    
+    display: flex;
+ 
+    padding-top: 100px;
+
+    padding-left: 170px;
+    padding-right: 170px;
+
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+h1.medie {
+font-family: 'DMSerifText-Regular';
+src: url('./assets/DM_Serif_Text/DMSerifText-Regular.ttf');
+font-size: 24pt;
+font-weight: 100;
+}
+
+.internalcontainer-L {
+flex: 0.5;
+
+padding: 20px;
+font-family: 'Quicksand';
+src: url('./Quicksand/-VariableFont_wght.ttf');
+font-size: 14pt;
+}
+
+.internalcontainer-M {
+    flex: 0.5;
+    
+padding: 20px;
+font-family: 'Quicksand';
+src: url('./Quicksand/-VariableFont_wght.ttf');
+font-size: 14pt;
+}
+
+.internalcontainer-R {
+    flex: 0.5;
+    
+    padding: 20px;
+    font-family: 'Quicksand';
+    src: url('./Quicksand/-VariableFont_wght.ttf');
+font-size: 14pt;
+}
+
+@media screen and (max-width: 768px){
+.holdingcontainer {
+flex-direction: column;
+  }
+}
+
+/*Flex-box:*/
+
+/* bildeikoner til mail, instagram, linkedin */
+.ikoner {
+
+    height: auto;
+    max-width: 60%;
+   
+    padding-bottom: 15px;
+}
+
+
+
+
